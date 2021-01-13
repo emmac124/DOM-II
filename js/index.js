@@ -5,7 +5,6 @@ const singleNav = navBarr.querySelectorAll('a');
 const firstSectionIntro = document.querySelector('.intro');
 const introImg = firstSectionIntro.querySelector('img');
 const introTextH2 = firstSectionIntro.querySelector('h2');
-const introTextP = firstSectionIntro.querySelector('p');
 const signUp = document.querySelectorAll('.btn');
 
 
@@ -52,6 +51,15 @@ Array.from(signUp).forEach(event6 => {
 window.addEventListener('resize', event => {
     console.log("Window Size");
 });
+
+Array.from(document).forEach( element => {
+    element.addEventListener('click', event => {
+    console.log("Wow look at all those events!", event.target);
+    console.log("Wow! Look at the current event!",event.currentTarget);
+    console.log("\n");
+    event.stopPropagation();
+    })
+})
 
 
 
